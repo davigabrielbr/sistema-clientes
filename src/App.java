@@ -3,11 +3,13 @@ import java.util.Scanner;
 
 import DAO.UsuarioDAO;
 import model.Usuario;
+import service.UsuarioService;
 
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         UsuarioDAO dao = new UsuarioDAO();
+        UsuarioService service = new UsuarioService();
 
         int opcao = -1;
 
@@ -45,7 +47,7 @@ public class App {
                     usuario.setSenha(senha);
                     usuario.setEmail(email);
 
-                    dao.cadastrarUsuario(usuario);
+                    service.cadastrar(usuario);
 
                     break;
                 case 2:
@@ -95,9 +97,11 @@ public class App {
 
                     dao.deletarUsuario(idUsuario);
                     break;
+                case 0:
+                    System.out.println("Saindo...");
+                    break;
                 default:
                     System.out.println("Opção inválida.");
-                    break;
             }
          }
     }
