@@ -1,6 +1,6 @@
 package service;
 
-import DAO.UsuarioDAO;
+import dao.UsuarioDAO;
 import model.Usuario;
 
 public class UsuarioService {
@@ -38,5 +38,7 @@ public class UsuarioService {
         }
 
         dao.cadastrarUsuario(usuario);
+
+        System.out.println("Usuário cadastrado com sucesso.");
     }
 }

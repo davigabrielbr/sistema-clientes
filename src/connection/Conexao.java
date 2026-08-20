@@ -12,22 +12,16 @@ public class Conexao {
     private static final String user = "root";
     private static final String password = "";
 
-    private static Connection conn; 
-
     public static Connection getConexao() {
         try {
-            if (conn == null) {
                 Properties properties = carregarConfiguracao();
 
                 String url = properties.getProperty("db.url");
                 String user = properties.getProperty("db.user");
                 String password = properties.getProperty("db.password");
 
-                conn = DriverManager.getConnection(url, user, password);
-            }
-
-            return conn;
-        } catch (SQLException e) {
+                return DriverManager.getConnection(url, user, password);
+            } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }

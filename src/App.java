@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import DAO.UsuarioDAO;
+import dao.UsuarioDAO;
 import model.Usuario;
 import service.UsuarioService;
 
